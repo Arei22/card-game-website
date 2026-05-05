@@ -1,0 +1,47 @@
+h1 {
+    font-size: 400%;
+    margin-top: 0;
+    text-align: center;
+    padding-top: 10px;
+}
+
+#list {
+    display: grid;
+
+    grid-template-columns: repeat(5, 1fr);
+
+    .cell {
+        font-size: 200%;
+        display: flex;
+        justify-content: center;
+
+        a {
+            color: white;
+            padding: 10px;
+        }
+    }
+}
+
+@media (max-width: 750px) {
+    #list {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    #list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 450px) {
+    #list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 300px) {
+    #list {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
