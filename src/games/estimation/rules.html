@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estimation - Règles</title>
+    <link rel="stylesheet" href="../../styles/background.scss">
+    <link rel="stylesheet" href="../../styles/return.scss">
+    <link rel="stylesheet" href="./styles/flex.scss">
+</head>
+
+<body>
+    <a href="/choices.html?game=estimation" id="return">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+            class="size-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+        </svg>
+        Retour
+    </a>
+
+    <p>
+        Estimation est un jeu jouable de 3 à 8 joueurs (on peut toutefois dépasser cet intervalle). Le but est de
+        deviner le bon nombre de plis que vous remporterez à chaque manche, sachant qu’à chacune
+        d’entre elles, le nombre de cartes dans le jeu diminue.
+    </p>
+
+    <p>
+        Pour ce jeu, vous aurez besoin d’un jeu de 52 cartes (toutes les cartes de 1 à 10, ainsi que les valets, les
+        dames et les rois), d’une feuille et d’un stylo (ou d’un crayon).
+    </p>
+
+    <p>
+        Si vous ne souhaitez pas dessiner de tableau ni calculer les points manuellement, vous pouvez utiliser le
+        calculateur disponible sur ce site. Dans ce cas, vous n’aurez besoin ni de papier ni de stylo.
+    </p>
+
+    <br>
+
+    <p>
+        Dessinez sur votre feuille un tableau dont le nombre de colonnes (hors la colonne des en-têtes de lignes)
+        correspond
+        au nombre de joueurs, et le nombre de lignes (hors la ligne des en-têtes de colonnes) est égal à 52 divisé par
+        le
+        nombre de joueurs.
+    </p>
+
+    <p>
+        Dans les en-têtes de colonnes, inscrivez les noms des joueurs (dans l’ordre de votre choix).
+        Dans les en-têtes de lignes, vous indiquerez un nombre suivi d’un symbole.
+    </p>
+
+    <p>
+        Pour les nombres : sur la première ligne, inscrivez le nombre de lignes calculé précédemment, puis décrémentez
+        de 1
+        à chaque ligne suivante.
+    </p>
+
+    <p>
+        Pour les symboles : l’ordre est carreau, pique, cœur, trèfle.
+    </p>
+
+    <p>
+        Par exemple, pour 4 joueurs, vous obtiendrez le tableau suivant :
+    </p>
+
+    <div class="flex">
+        <table border="1" cellpadding="5" cellspacing="0">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Joueur 1</th>
+                    <th>Joueur 2</th>
+                    <th>Joueur 3</th>
+                    <th>Joueur 4</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>13 ♦</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th>12 ♠</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th>11 ♥</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th>10 ♣</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th>9 ♦</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th>8 ♠</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th>7 ♥</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th>6 ♣</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th>5 ♦</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th>4 ♠</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th>3 ♥</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th>2 ♣</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th>1 ♦</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <p>
+        Chaque ligne correspond à une manche.
+    </p>
+
+    <br>
+
+    <p>
+        Au début de chaque manche, un joueur mélange et distribue les cartes. À chaque nouvelle manche, c’est le joueur
+        situé à gauche du précédent distributeur qui distribue.
+    </p>
+
+    <p>
+        Le distributeur doit donner, face cachée, à chaque joueur un nombre de cartes égal au nombre indiqué sur la
+        ligne correspondant à la manche. Les cartes non distribuées sont mises de côté, sans être révélées.
+    </p>
+
+    <p>
+        Ensuite, dans le sens horaire, chaque joueur doit estimer le nombre de plis qu’il remportera avec les cartes
+        qu’il a en main. Cette estimation doit être inscrite dans la case du joueur pour la manche correspondante. On
+        commence par le joueur situé à gauche du distributeur.
+    </p>
+
+    <p>
+        Le dernier joueur à annoncer (normalement le distributeur) ne peut pas choisir un nombre de plis qui ferait que
+        la somme des plis estimés par tous les joueurs soit égale au nombre de cartes distribuées à chaque joueur.
+    </p>
+
+    <p>
+        Enfin, le joueur situé deux places à gauche du distributeur commence le premier tour de jeu de la manche.
+    </p>
+
+    <br>
+
+    <p>
+        Le premier joueur joue une carte : celle-ci détermine le symbole du tour.
+    </p>
+
+    <p>
+        Les autres joueurs jouent ensuite chacun leur tour, dans le sens horaire. Ils doivent obligatoirement jouer une
+        carte de même symbole que celui demandé, s’ils en possèdent une. Dans le cas contraire, ils peuvent jouer la
+        carte de leur choix.
+    </p>
+
+    <p>
+        Une fois que tous les joueurs ont joué une carte, le pli est remporté par le joueur ayant posé la carte la plus
+        forte de symbole demandé.
+    </p>
+
+    <p>
+        L’ordre des cartes, de la plus forte à la plus faible, est le suivant : <br>
+        1 (As) > Roi > Dame > Valet > 10 > 9 > 8 > 7 > 6 > 5 > 4 > 3 > 2.
+    </p>
+
+    <p>
+        Toutefois, si une ou plusieurs cartes d’atout ont été jouées (l’atout étant le symbole correspondant à la ligne
+        de la manche), alors le pli est remporté par le joueur ayant joué la plus forte carte d’atout.
+    </p>
+
+    <p>
+        Le joueur qui remporte le pli le met de côté (sans l’ajouter à sa main).
+    </p>
+
+    <p>
+        S’il reste encore des cartes dans les mains des joueurs, un nouveau tour commence et le premier joueur a jouer
+        est celui qui a remporté le plis.
+    </p>
+
+    <br>
+
+    <p>
+        Une fois tous les tours terminés, chaque joueur compte le nombre de plis qu’il a remportés.
+    </p>
+
+    <p>
+        Si ce nombre correspond exactement au nombre de plis estimé, le joueur marque un score égal à 10 points plus son
+        estimation (à inscrire dans sa case).
+    </p>
+
+    <p>
+        En revanche, si le nombre de plis réalisés ne correspond pas à l’estimation, le joueur inscrit simplement le
+        nombre de plis effectivement réalisés dans sa case.
+    </p>
+
+    <p>
+        Vous pouvez ensuite jouer la manche suivante, s’il en reste.
+    </p>
+
+    <br>
+
+    <p>
+        Une fois toutes les manches terminées, chaque joueur fait la somme de tous les points obtenus à chaque manche.
+
+    </p>
+
+    <p>
+        Le joueur ayant le plus de points remporte la partie.
+    </p>
+</body>
+
+</html>

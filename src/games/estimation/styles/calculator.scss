@@ -1,0 +1,16 @@
+.hidden {
+    display: none;
+}
+
+.cell {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+#btn {
+    margin: 10px;
+}
+
+#result {
+    text-align: center;
+}
