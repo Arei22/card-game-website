@@ -1,4 +1,10 @@
 .flex {
     display: flex;
     justify-content: center;
+
+    .table_wrapper {
+        min-width: 0;
+        max-width: 100%;
+        overflow-x: auto;
+    }
 }

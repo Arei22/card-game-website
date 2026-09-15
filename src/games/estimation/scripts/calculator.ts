@@ -20,6 +20,8 @@ const validatePlayerNameBtn = document.getElementById("validate_player_name") as
 const validateGuessedTrickCount = document.getElementById("validate_guessed_trick_count") as HTMLButtonElement;
 const validateTrickCount = document.getElementById("validate_trick_count") as HTMLButtonElement;
 
+const errorDiv = document.getElementById("error") as HTMLDivElement;
+
 const reset = document.getElementById("reset") as HTMLButtonElement;
 const result = document.getElementById("result") as HTMLDivElement;
 
@@ -46,6 +48,7 @@ validatePlayerCountBtn.addEventListener("click", () => {
         const textInput = document.createElement("input");
         textInput.type = "text";
         textInput.value = `Joueur ${i + 1}`
+        textInput.classList.add("player_name")
         th.appendChild(textInput);
         head.appendChild(th);
     }
@@ -119,6 +122,17 @@ validatePlayerCountBtn.addEventListener("click", () => {
 
     divPlayerCount.classList.add("hidden");
     validatePlayerNameBtn.classList.remove("hidden");
+
+    const inputs = document.querySelectorAll("input") as NodeListOf<HTMLInputElement>;
+
+    inputs.forEach(e => {
+        if (!e.classList.contains("player_name")) {
+            return;
+        }
+        e.addEventListener("change", () => {
+            e.style.width = e.value.length + 1 + 'ch';
+        })
+    })
 });
 
 validatePlayerNameBtn.addEventListener("click", () => {
@@ -149,6 +163,21 @@ validatePlayerNameBtn.addEventListener("click", () => {
 })
 
 validateGuessedTrickCount.addEventListener("click", () => {
+    let count = 0;
+    for (let i = 1; i < playerCount + 1; i++) {
+        const Cell = document.getElementById(`c-${currentRound}-${i}`) as HTMLTableCellElement;
+        const trickInput1 = Cell.querySelector(".trick_input1") as HTMLInputElement;
+        count += parseInt(trickInput1.value, 10);
+    }
+
+    if (count == roundCount - currentRound + 1) {
+        errorDiv.classList.remove("hidden");
+        errorDiv.innerText = "Le total de plis estimés ne doit pas être égal au nombre de plis du tour."
+        return;
+    }
+
+    errorDiv.classList.add("hidden");
+
     for (let i = 1; i < playerCount + 1; i++) {
         const Cell = document.getElementById(`c-${currentRound}-${i}`) as HTMLTableCellElement;
         const trickInput1 = Cell.querySelector(".trick_input1") as HTMLInputElement;
@@ -163,6 +192,19 @@ validateGuessedTrickCount.addEventListener("click", () => {
 })
 
 validateTrickCount.addEventListener("click", () => {
+    let count = 0;
+    for (let i = 1; i < playerCount + 1; i++) {
+        const Cell = document.getElementById(`c-${currentRound}-${i}`) as HTMLTableCellElement;
+        const trickInput1 = Cell.querySelector(".trick_input2") as HTMLInputElement;
+        count += parseInt(trickInput1.value, 10);
+    }
+
+    if (count != roundCount - currentRound + 1) {
+        errorDiv.classList.remove("hidden");
+        errorDiv.innerText = "Le total de plis doit être égal au nombre de plis du tour."
+        return;
+    }
+
     validateTrickCount.classList.add("hidden");
     for (let i = 1; i < playerCount + 1; i++) {
         const Cell = document.getElementById(`c-${currentRound}-${i}`) as HTMLTableCellElement;

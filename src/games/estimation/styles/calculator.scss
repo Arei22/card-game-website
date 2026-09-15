@@ -5,10 +5,29 @@
 .cell {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+
+    div {
+        margin: 3px;
+        text-align: center;
+    }
+}
+
+input {
+    width: 4ch;
+}
+
+.player_name {
+    width: 10ch;
 }
 
 #btn {
     margin: 10px;
+}
+
+#error {
+    margin: 10px;
+    text-align: center;
+    color: red;
 }
 
 #result {
