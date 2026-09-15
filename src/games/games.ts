@@ -7,8 +7,8 @@ export interface GameModule {
 
 export const games: GameModule[] = [
     {
-        title: "Example",
-        slug: "example",
+        title: "Estimation",
+        slug: "estimation",
         rules: true,
         calculator: true,
     },

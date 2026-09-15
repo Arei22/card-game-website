@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example - Calculateur</title>
+    <link rel="stylesheet" href="../../styles/background.scss">
+    <link rel="stylesheet" href="../../styles/return.scss">
+    <link rel="stylesheet" href="./styles/calculator.scss">
+    <link rel="stylesheet" href="./styles/flex.scss">
+</head>
+
+<body>
+    <a href="/choices.html?game=example" id="return">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+            class="size-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+        </svg>
+        Retour
+    </a>
+    <div class="flex" id="btn">
+        <div id="div_player_count">
+            <label for="player_count">
+                Nombre de joueurs (3 à 8) :
+            </label>
+
+            <input type="number" id="player_count" min="3" max="8" value="3">
+
+            <button id="validate_player_count"> Valider le nombre de joueur </button>
+        </div>
+
+        <button id="validate_player_name" class="hidden">Valider le nom des joueurs</button>
+
+        <button id="validate_guessed_trick_count" class="hidden">Valider le nombre de plis estimé</button>
+
+        <button id="validate_trick_count" class="hidden">Valider le nombre de plis effectvement fait</button>
+
+        <button id="reset" class="hidden">Relancer</button>
+    </div>
+
+    <div id="error" class="hidden"></div>
+
+    <div class="flex">
+        <div class="table_wrapper">
+            <table border="1" cellpadding="5" cellspacing="0" id="table"></table>
+        </div>
+    </div>
+    <div class="hidden" id="result"></div>
+</body>
+<script type="module" src="scripts/calculator.ts"></script>
+
+</html>
