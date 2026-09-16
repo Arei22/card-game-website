@@ -1,46 +1,73 @@
-h1 {
-    font-size: 400%;
-    margin-top: 0;
-    text-align: center;
-    padding-top: 10px;
-}
+body {
 
-#list {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    padding: 0 !important;
 
-    .cell {
-        font-size: 200%;
-        display: flex;
-        justify-content: center;
+    h1 {
+        font-size: 400%;
+        margin-top: 0;
+        text-align: center;
+        padding-top: 10px;
+    }
 
-        a {
-            color: white;
-            padding: 10px;
+    #list {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        margin-bottom: 10vh;
+
+        .cell {
+            font-size: 200%;
+            display: flex;
+            justify-content: center;
+
+            a {
+                color: white;
+                padding: 10px;
+            }
+        }
+    }
+
+    footer {
+        background-color: rgba($color: #ffffff, $alpha: 0.2);
+        bottom: 0;
+        position: fixed;
+        width: 100vw;
+        display: grid;
+        height: 10vh;
+        grid-template-rows: repeat(2, 1fr);
+
+        div {
+            margin: 5px;
+            align-items: center;
+            display: flex;
+
+            svg {
+                height: 25px;
+                margin-right: 5px;
+            }
         }
     }
 }
 
 @media (max-width: 750px) {
-    #list {
+    body #list {
         grid-template-columns: repeat(4, 1fr);
     }
 }
 
 @media (max-width: 600px) {
-    #list {
+    body #list {
         grid-template-columns: repeat(3, 1fr);
     }
 }
 
 @media (max-width: 450px) {
-    #list {
+    body #list {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media (max-width: 300px) {
-    #list {
+    body #list {
         grid-template-columns: repeat(1, 1fr);
     }
 }
